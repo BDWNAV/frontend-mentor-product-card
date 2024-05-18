@@ -19,6 +19,8 @@
     body {
       background-color: hsl(30, 38%, 92%);
       font-size: 0.9rem;
+      min-height: 100vh;
+      overflow-y: hidden;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -109,6 +111,10 @@
       display: none;
     }
 
+    .hidden-br-1 {
+      display: none;
+    }
+
     @media only screen and (max-width: 600px) {
       body {
         padding: 0.4em;
@@ -129,7 +135,20 @@
       .desktop-product-image {
         display: none;
       }
+
+      .hidden-br {
+        display: none;
+      }
+
+      .hidden-br-1 {
+        display: block;
+      }
+
+      .hidden-br-2 {
+        display: none;
+      }
     }
+    
   </style>
 </head>
 <body>
@@ -142,7 +161,7 @@
       <div>
         <h3>Perfume</h3>
 
-        <h2>Gabrielle <br/>Essence Eau <br/>De Parfum</h2>
+        <h2>Gabrielle <br class="hidden-br"/>Essence <br class="hidden-br-1"/>Eau <br class="hidden-br-2"/>De Parfum</h2>
       </div>
     
       <p>
