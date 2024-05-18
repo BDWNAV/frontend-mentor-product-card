@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Product preview card component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+
+    body {
+      background-color: hsl(30, 38%, 92%);
+      font-size: 0.9rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .main-div {
+      background-color: hsl(0, 0%, 100%);
+      display: flex;
+      flex-direction: row;
+      height: 450px;
+      width: 600px;
+      border-radius: 10px;
+    }
+
+    .main-div > * {
+      flex: 1;
+    }
+
+    .main-div .desktop-product-image {
+      height: 100%;
+      width: 100%;
+      border-radius: 10px 0px 0px 10px;
+    }
+
+    .card-content {
+      padding: 1.3rem;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-content h2 {
+      font-family: "Fraunces", serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+    }
+
+    .card-content div h3 {
+      font-family: "Montserrat", sans-serif;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-weight: 300;
+    }
+
+    .card-content p {
+      font-size: 1rem;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 400;
+      opacity: 0.8;
+    }
+
+    .prices {
+      display: flex;
+      align-items: center;
+    }
+
+    .prices h4 {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 300;
+      margin-left: 1em;
+      text-decoration: line-through;
+      opacity: 0.8;
+      font-size: 1em;
+    }
+
+    .prices h2 {
+      color: hsl(158, 36%, 37%);
+    }
+
+    .card-content button {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1em;
+      border-radius: 10px;
+      border: none;
+      background-color: hsl(158, 36%, 37%);
+      color: white;
+      font-weight: 700;
+    }
+
+    .card-content svg {
+      margin-right: 0.6em;
+    }
+
+    .mobile-product-image {
+      display: none;
+    }
+
+    @media only screen and (max-width: 600px) {
+      body {
+        padding: 0.4em;
+      }
+      
+      .mobile-product-image {
+        display: block;
+        border-radius: 10px 10px 0px 0px;
+      }
+      
+      .main-div {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+      }
+      
+      .desktop-product-image {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="main-div">
+    <img src="images/image-product-desktop.jpg" class="desktop-product-image" alt="desktop-product" />
+    <img src="images/image-product-mobile.jpg" class="mobile-product-image" alt="mobile-product" />
+    
+    <div class="card-content">
+      <div>
+        <h3>Perfume</h3>
+
+        <h2>Gabrielle <br/>Essence Eau <br/>De Parfum</h2>
+      </div>
+    
+      <p>
+        A floral, solar and voluptuous interpretation composed by Olivier Polge, 
+        Perfumer-Creator for the House of CHANEL.
+      </p>
+    
+      <div class="prices">
+        <h2>$149.99</h2>
+        <h4>$169.99</h4>
+      </div>
+    
+      <button>
+        <svg width="15" height="16" xmlns="http://www.w3.org/2000/svg">
+          <path d="M14.383 10.388a2.397 2.397 0 0 0-1.518-2.222l1.494-5.593a.8.8 0 0 0-.144-.695.8.8 0 0 0-.631-.28H2.637L2.373.591A.8.8 0 0 0 1.598 0H0v1.598h.983l1.982 7.4a.8.8 0 0 0 .799.59h8.222a.8.8 0 0 1 0 1.599H1.598a.8.8 0 1 0 0 1.598h.943a2.397 2.397 0 1 0 4.507 0h1.885a2.397 2.397 0 1 0 4.331-.376 2.397 2.397 0 0 0 1.12-2.021ZM11.26 7.99H4.395L3.068 3.196h9.477L11.26 7.991Zm-6.465 6.392a.8.8 0 1 1 0-1.598.8.8 0 0 1 0 1.598Zm6.393 0a.8.8 0 1 1 0-1.598.8.8 0 0 1 0 1.598Z" fill="#FFF"/>
+        </svg>
+        Add to Cart
+      </button>
+    </div>
+  </div>
+
+</body>
+</html>
